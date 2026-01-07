@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - SLANDS Tech Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #FFFEF7 0%, #F5F5DC 100%);
+      color: #1a1a1a;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation */
+    .siteNav {
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #D2B48C;
+    }
+
+    .brand {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #FFFEF7;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+    }
+
+    .brand:hover {
+      color: #D2B48C;
+    }
+
+    .links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .links a {
+      color: #F5F5DC;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #D2B48C;
+      transition: width 0.3s ease;
+    }
+
+    .links a:hover {
+      color: #FFFEF7;
+    }
+
+    .links a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      width: 100%;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      font-weight: 400;
+    }
+
+    /* FAQ Container */
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(210, 180, 140, 0.3);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border-color: rgba(210, 180, 140, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .faq-question {
+      padding: 1.75rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #000;
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(245, 245, 220, 0.3);
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: #D2B48C;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 300;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: #000;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 2rem 2rem 2rem;
+    }
+
+    .faq-answer strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .links {
+        display: none;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+      }
+
+      .faq-question {
+        font-size: 1.05rem;
+        padding: 1.5rem 1.5rem;
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+      }
+
+    
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* ---------------------------------------------------------------------
+     * Site Footer Styles
+     *
+     * A unified footer shared across pages. Uses a dark background with
+     * vanilla‑coloured text and a flexible grid layout to adapt to
+     * different screen sizes.
+     */
+    .site-footer {
+      background-color: #000;
+      color: #F5F5DC;
+      padding: 4rem 2rem 2rem;
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+      margin-top: 4rem;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+    .site-footer .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .site-footer .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .site-footer .footer-brand {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      color: #F5F5DC;
+    }
+    .site-footer .footer-description {
+      line-height: 1.6;
+      color: #DDD7C4;
+    }
+    .site-footer .footer-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #F5F5DC;
+    }
+    .site-footer .footer-links,
+    .site-footer .footer-contact,
+    .site-footer .footer-hours {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .site-footer .footer-links li,
+    .site-footer .footer-contact li,
+    .site-footer .footer-hours li {
+      margin-bottom: 0.5rem;
+    }
+    .site-footer .footer-links a {
+      color: #F5F5DC;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .site-footer .footer-links a:hover {
+      color: #DDD7C4;
+    }
+    .site-footer .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .site-footer .footer-contact .footer-icon {
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .site-footer .footer-bottom {
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+    .site-footer .footer-nav a {
+      color: #F5F5DC;
+      margin-left: 1rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-size: 0.875rem;
+    }
+    .site-footer .footer-nav a:first-child {
+      margin-left: 0;
+    }
+    .site-footer .footer-nav a:hover {
+      color: #DDD7C4;
+    }
+    @media (max-width: 768px) {
+      .site-footer {
+        padding: 3rem 1rem;
+      }
+      .site-footer .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .site-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .site-footer .footer-nav {
+        margin-top: 0.5rem;
+      }
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Focus styles for accessibility */
+    a:focus, .faq-question:focus {
+      outline: 2px solid #D2B48C;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="siteNav">
+    <a href="index.html" class="brand">SLANDS</a>
+    <div class="links">
+      <a href="index.html">00 Portfolio</a>
+      <a href="index.html">01 Services</a>
+      <a href="index.html">02 About Us</a>
+      <a href="index.html">03 Contact</a>
+      <a href="faq.html">04 FAQ</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div class="page-header">
+      <h1 class="page-title">Frequently Asked Questions</h1>
+      <p class="page-subtitle">Everything you need to know about our services</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <span>💰 What is the minimum pricing for your services?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Our minimum project pricing starts at <strong>$700</strong>. This ensures we deliver high-quality, fully customized SaaS solutions with ongoing support. Each project is tailored to your specific needs, including custom branding, feature development, and dedicated technical assistance.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <span>⚙️ Can the platform be customized for my business?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <strong>Absolutely!</strong> We tailor features, branding, and integrations to your exact needs. Your colors, your logo, your workflows. Every solution we build is fully customizable to match your business requirements and brand identity. From UI design to backend functionality, we adapt everything to fit your vision.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <span>⏳ How long does it take to launch?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Typical projects are ready within <strong>2–6 weeks</strong>, depending on complexity and requested features. We follow an agile development process with regular check-ins and demos, ensuring you're involved at every stage. Rush delivery options are available for time-sensitive projects.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <span>🔒 Who owns the final website/workflow?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <strong>You own the product.</strong> We simply build and tailor it to your needs — your data and brand stay yours. Upon project completion, you receive full ownership of all code, assets, and documentation. We provide complete source files and can assist with deployment and hosting setup.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <span>🛠️ What technologies do you use?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We leverage modern, industry-standard technologies including React, Node.js, Python, and cloud infrastructure. Our tech stack is chosen based on your specific requirements to ensure scalability, security, and optimal performance. We stay updated with the latest technologies to deliver cutting-edge solutions.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+          <span>📞 What kind of support do you provide?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We offer comprehensive post-launch support including bug fixes, technical assistance, and feature updates. Our support packages range from basic email support to priority 24/7 assistance. We also provide detailed documentation and training to ensure your team can manage the platform effectively.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Brand and description -->
+    <div class="footer-column">
+      <h2 class="footer-brand">SLANDS</h2>
+      <p class="footer-description">
+        Slands is a student‑led initiative from the University of Arkansas dedicated to building websites and software for local businesses. We help small companies thrive by providing affordable, custom digital tools.
+      </p>
+    </div>
+    <!-- Quick links -->
+    <div class="footer-column">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#aboutUs">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="fqa.html">FAQ</a></li>
+      </ul>
+    </div>
+    <!-- Contact details -->
+    <div class="footer-column">
+      <h3 class="footer-heading">Contact Us</h3>
+      <ul class="footer-contact">
+        <li><span class="footer-icon">📍</span> <span>Fayeteville, AR 72703</span></li>
+        <li><span class="footer-icon">📞</span> <span>(479) 278-3112</span></li>
+        <li><span class="footer-icon">✉️</span> <span>srgl1179@gmail.com</span></li>
+      </ul>
+    </div>
+    <!-- Hours of operation -->
+    <div class="footer-column">
+      <h3 class="footer-heading">Hours of Operation</h3>
+      <ul class="footer-hours">
+        <li>Monday – Friday: 7:00 AM – 7:00 PM</li>
+        <li>Saturday – Sunday: 7:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 SLANDS. All rights reserved.</p>
+    <div class="footer-nav">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- JavaScript -->
+  <script>
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+          item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Keyboard accessibility
+      question.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

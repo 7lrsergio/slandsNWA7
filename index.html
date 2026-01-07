@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>slandsNWA</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Load our JavaScript modules: main.js handles all non-video behaviour,
+       video.js contains video playback logic.  Both are deferred to avoid
+       blocking the parser. -->
+  <script src="main.js" defer></script>
+
+  <!-- Load the Lordicon library once with defer to prevent blocking -->
+  <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
+</head>
+<body>
+
+
+  <nav class="siteNav">
+    <a href="#top" class="brand">SLANDS</a>
+  
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+  
+
+    <div class="links">
+      <a href="#portfolio">00 Portfolio</a>
+      <a href="#services">01 Services</a>
+      <a href="#aboutUs">02 About Us</a>
+      <a href="#contact">03 Contact</a>
+      <a href="fqa.html">04 FAQ</a>
+    </div>
+  </nav>
+  
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-close" aria-label="Close menu">✕</button>
+  
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#aboutUs">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="fqa.html">FAQ</a>
+  </div>
+  
+  
+
+  
+  
+  
+
+  <!-- Your content goes here -->
+  <section class="titleSection">
+      <div class="background1 shadow">
+        
+<img src="img/slands.png" class="title">
+
+ 
+<div class="smallContainer1">
+  <button
+    class="callToAction"
+    onclick="window.location.href='mailto:info@slandsarkansas.com?subject=Free%20Demo%20Request';"
+  >
+    Book a FREE Demo
+  </button>
+
+  <button
+    class="callToAction"
+    onclick="href='sergiolopez.work';"
+  >
+    More About Us
+  </button>
+</div>
+
+  </div>
+
+
+    
+
+  <div class="spacer11 layer5"></div>
+  <div class="spacer4 layer6"></div>
+  </section>
+
+
+
+
+  <section class="mission" id="mission">
+    <div class="missionText">
+      <h1 class="missionTitle texts">
+        <span>Mission</span>
+      </h1>
+  
+      <p class="missionCopy texts">
+        <span>
+          We help local businesses in Northwest Arkansas scale, automate and
+          simplify their operations with simple, reliable and personalized software
+        </span>
+      </p>
+    </div>
+  </section>
+  
+
+  <div class="spacer layer1"></div>
+
+
+  <section class="portfolioSection">
+      <h1 class="portfolioTitle"  id="portfolio">Websites + Software Examples</h1>
+      
+      <div class="carousel-container">
+          <!-- Carousel Controls -->
+          <button class="carousel-nav prev" aria-label="Previous" data-testid="carousel-prev-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+          </button>
+          <button class="carousel-nav next" aria-label="Next" data-testid="carousel-next-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+          </button>
+
+          <div class="portfolio-carousel" data-testid="portfolio-carousel">
+
+            <!-- Portfolio Card 1 -->
+            <div class="portfolioCard active" data-index="0" data-testid="portfolio-card-0">
+                <div class="video-container" data-testid="video-container-0">
+                    <video class="portfolioVid" src="img/example.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-0"></video>
+                </div>
+          
+                <div class="card-footer">
+                    <h2 class="card-title">Personal Portfolio Website</h2>
+                    <button class="learn-more-btn" data-testid="learn-more-btn-0">Learn More</button>
+                </div>
+          
+                <div class="pTextContainer" data-testid="text-container-0">
+                    <h3 class="pDescription">
+                        We design and build <span class="highlight">interactive websites</span> that show
+                        <span class="highlight">who you are</span> and
+                        <span class="highlight">what makes you special</span>.
+                        Your website becomes a <span class="highlight">strong online presence</span> that helps you
+                        <span class="highlight">stand out</span>.
+                    </h3>
+                    <button class="close-details-btn" data-testid="close-details-btn-0">Close</button>
+                </div>
+            </div>
+          
+            <!-- Portfolio Card 2 -->
+            <div class="portfolioCard" data-index="1" data-testid="portfolio-card-1">
+                <div class="video-container" data-testid="video-container-1">
+                    <video class="portfolioVid" src="img/example2.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-1"></video>
+                </div>
+          
+                <div class="card-footer">
+                    <h2 class="card-title">Restaurant / Food Truck</h2>
+                    <button class="learn-more-btn" data-testid="learn-more-btn-1">Learn More</button>
+                </div>
+          
+                <div class="pTextContainer" data-testid="text-container-1">
+                    <h3 class="pDescription">
+                        We build a <span class="highlight">mobile-friendly website</span> that shows your
+                        <span class="highlight">menu</span> and
+                        <span class="highlight">best sellers</span>.
+                        We add <span class="highlight">real reviews</span> to build
+                        <span class="highlight">trust</span> and help customers
+                        <span class="highlight">choose your business</span>.
+                    </h3>
+                    <button class="close-details-btn" data-testid="close-details-btn-1">Close</button>
+                </div>
+            </div>
+          
+            <!-- Portfolio Card 3 -->
+            <div class="portfolioCard" data-index="2" data-testid="portfolio-card-2">
+                <div class="video-container" data-testid="video-container-2">
+                    <video class="portfolioVid" src="img/example3.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-2"></video>
+                </div>
+          
+                <div class="card-footer">
+                    <h2 class="card-title">Barber Shop</h2>
+                    <button class="learn-more-btn" data-testid="learn-more-btn-2">Learn More</button>
+                </div>
+          
+                <div class="pTextContainer" data-testid="text-container-2">
+                    <h3 class="pDescription">
+                        We design <span class="highlight">custom images</span> and
+                        <span class="highlight">background visuals</span> for your brand.
+                        We build a website that
+                        <span class="highlight">handles appointments</span> and helps your business
+                        <span class="highlight">show up on Google Maps</span>.
+                    </h3>
+                    <button class="close-details-btn" data-testid="close-details-btn-2">Close</button>
+                </div>
+            </div>
+          
+          
+          
+          <!-- Tattoo Shop Card -->
+          <div class="portfolioCard" data-index="3" data-testid="portfolio-card-3">
+              <div class="video-container" data-testid="video-container-3">
+                  <video class="portfolioVid" src="img/example4.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-3"></video>
+              </div>
+          
+              <div class="card-footer">
+                  <h2 class="card-title">Tattoo Shop</h2>
+                  <button class="learn-more-btn" data-testid="learn-more-btn-3">Learn More</button>
+              </div>
+          
+              <div class="pTextContainer" data-testid="text-container-3">
+                  <h3 class="pDescription">
+                      We create <span class="highlight">multiple pages</span> to show your
+                      <span class="highlight">artwork</span> and
+                      <span class="highlight">style</span>.
+                      We add <span class="highlight">online booking</span> using
+                      <span class="highlight">Google Calendar</span> so customers can
+                      <span class="highlight">book appointments easily</span>.
+                  </h3>
+                  <button class="close-details-btn" data-testid="close-details-btn-3">Close</button>
+              </div>
+          </div>
+          
+          </div>
+
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators" data-testid="carousel-indicators">
+              <button class="indicator active" data-index="0" aria-label="Go to slide 1" data-testid="indicator-0"></button>
+              <button class="indicator" data-index="1" aria-label="Go to slide 2" data-testid="indicator-1"></button>
+              <button class="indicator" data-index="2" aria-label="Go to slide 3" data-testid="indicator-2"></button>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-bar" data-testid="progress-bar">
+              <div class="progress-fill" data-testid="progress-fill"></div>
+          </div>
+      </div>
+  </section>
+
+<div class="spacer3 layer4"></div>
+
+
+<div class="spacer2 layer2"></div>
+
+<section class="aboutUs">
+  <div class="aboutUsText">
+    <h1 class="aTitle texts" id="aboutUs"><span>About Us</span></h1>
+
+    <p class="aCopy texts">
+      <span>
+        We are a group of students from the University of Arkansas teaming up to create
+        software tools to help local businesses scale their production and at the same time
+        help our work opportunities by creating real projects that solve real problems for
+        real people and bring value to the table. The money we make from these is to help
+        ourselves through college.
+      </span>
+    </p>
+  </div>
+</section>
+
+
+  <div class="spacer2 layer3">
+  </div>
+
+
+<!-- Modal -->
+<div class="services-section__modal" id="services-modal">
+  <div class="services-section__modal-overlay"></div>
+  <div class="services-section__modal-content">
+      <button class="services-section__modal-close" id="modal-close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+      </button>
+      
+      <!-- Modal content will be dynamically inserted here -->
+      <div id="modal-body"></div>
+  </div>
+</div>
+<section class="services">
+
+  <ol class="servicesList">
+    <h1 class="servicesTitle">How Our Personalization Works</h1>
+    <li class="servicesItem">We <span class="highlight ">Learn Your Business</span> – You tell us your <span class="highlight ">industry, audience, and goals</span>.</li>
+    <li class="servicesItem"><span class="highlight ">Adapt the Tools</span> – We adapt/recommend features from our platform to <span class="highlight ">fit your workflow.</span></li>
+    <li class="servicesItem">We <span class="highlight ">Brand It</span> for You – <span class="highlight ">Your logo, your colors, your content.</span></li>
+  </ol>
+
+    <div class="services-section__container">
+    <!-- Header -->
+
+    
+    <div class="services-section__header">
+        <span class="services-section__badge">Services & Solutions</span>
+        <h2 class="services-section__title">SaaS & AI Solutions</h2>
+        <p class="services-section__subtitle">Choose the perfect solution for your business needs</p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-section__grid" id="services">
+        <!-- Tier 1 -->
+        <div class="services-section__card" data-service="1">
+            <div class="services-section__card-overlay"></div>
+            <div class="services-section__card-content">
+                
+              <div class="titleContainer">
+                <div class="servicesSmallContainer">
+                  <h2>Launch</h2>
+                  <h3>Package</h3>
+                  <span class="services-section__tier-badge">Tier 1</span>
+                </div>
+                <div class="services-section__icon">
+                  
+                  <lord-icon
+                      src="https://cdn.lordicon.com/mpfzuwxe.json"
+                      trigger="hover"
+                      colors="primary:#e83a30,secondary:#e76f51"
+                      style="width:100px;height:100px;transform: translate(64px,10px);">
+                  </lord-icon>
+                  </div>
+              </div>
+                
+                <h3 class="services-section__card-title">Fully Responsive Website</h3>
+                <p class="services-section__price">Starting at $700</p>
+                <p class="services-section__tagline">Professional Digital Storefront</p>
+            </div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="services-section__card" data-service="2">
+            <div class="services-section__card-overlay"></div>
+            <div class="services-section__card-content">
+              <div class="titleContainer">
+                  <div class="servicesSmallContainer">
+                    <h2>Advance</h2>
+                    <h3>Package</h3>
+                    <span class="services-section__tier-badge">Tier 2</span>
+                  </div>
+                  <div class="services-section__icon">
+                      
+                      <lord-icon
+                          src="https://cdn.lordicon.com/mjwccpnv.json"
+                          trigger="hover"
+                        colors="primary:#e83a30,secondary:#e76f51"
+                        style="width:110px;height:110px;transform: translateX(45px);">
+                    </lord-icon>
+                    </div>
+                </div>
+                <h3 class="services-section__card-title">Advanced Website + Maintenance</h3>
+                <p class="services-section__price">Monthly care</p>
+                <p class="services-section__tagline">Your website, fully managed</p>
+
+            </div>
+        </div>
+
+<!-- Tier 4 -->
+<div class="services-section__card" data-service="4">
+<div class="services-section__card-overlay"></div>
+<div class="services-section__card-content">
+<div class="titleContainer">
+    <div class="servicesSmallContainer">
+      <h2>Scale</h2>
+      <h3>Package</h3>
+      <span class="services-section__tier-badge">Tier 4</span>
+    </div>
+    <div class="services-section__icon">
+      
+      <lord-icon
+          src="https://cdn.lordicon.com/gztcjayb.json"
+          trigger="hover"
+          colors="primary:#e83a30,secondary:#e76f51"
+          style="width:110px;height:110px;transform: translate(89px,4px);">
+      </lord-icon>
+      </div>
+  </div>
+  <h3 class="services-section__card-title">AI Assistant / Chatbot</h3>
+  <p class="services-section__price">Custom-built</p>
+  <p class="services-section__tagline">Your Virtual Employee/ AI workflow</p>
+
+</div>
+</div>
+
+
+
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Brand and description -->
+    <div class="footer-column">
+      <h2 class="footer-brand">SLANDS</h2>
+      <p class="footer-description">
+        Slands is a student‑led initiative from the University of Arkansas dedicated to building websites and software for local businesses. We help small companies thrive by providing affordable, custom digital tools.
+      </p>
+    </div>
+    <!-- Quick links -->
+    <div class="footer-column">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#aboutUs">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="fqa.html">FAQ</a></li>
+      </ul>
+    </div>
+    <!-- Contact details -->
+    <div class="footer-column">
+      <h3 class="footer-heading">Contact Us</h3>
+      <ul class="footer-contact">
+        <li><span class="footer-icon">📍</span> <span>Fayeteville, AR 72703</span></li>
+        <li><span class="footer-icon">📞</span> <span>(479) 278-3112</span></li>
+        <li><span class="footer-icon">✉️</span> <span>srgl1179@gmail.com</span></li>
+      </ul>
+    </div>
+    <!-- Hours of operation -->
+    <div class="footer-column">
+      <h3 class="footer-heading">Hours of Operation</h3>
+      <ul class="footer-hours">
+        <li>Monday – Friday: 7:00 AM – 7:00 PM</li>
+        <li>Saturday – Sunday: 7:00 AM – 7:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 SLANDS. All rights reserved.</p>
+    <div class="footer-nav">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Closing body tag; scripts are now loaded once in the head -->
+</body>
+</html>
