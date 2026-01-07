@@ -2595,11 +2595,11 @@ body.faq-page .faq-question:focus {
     font-family: sans-serif;
   }
 
-/* 
+
 .spacer3{
-  width: 95.4%;
+  /* width: 95.4%; */
   aspect-ratio: 900/800;
-} */
+}
 
 /* missionsec */
 .missionText{
@@ -2773,7 +2773,7 @@ height: 100%;
 
 .services{
   display: grid;
-  height: 250vh;
+  height: 290vh;
 }
 
 .servicesList{
@@ -2800,10 +2800,10 @@ height: 100%;
 
 
 @media (max-width: 768px){
-  /* .spacer3{
-    width: 93.3%;
+  .spacer3{
+    /* width: 93.3%; */
     aspect-ratio: 900/1000;
-  } */
+  }
 
   
     .site-footer {
@@ -2909,10 +2909,10 @@ height: 100%;
 
 
 
-  /* .spacer3{
-    width: 89.3%;
+  .spacer3{
+    /* width: 89.3%; */
     aspect-ratio: 900/1000;
-  } */
+  }
 
   .missionTitle {
     margin-top: 1rem;
@@ -2984,4 +2984,5 @@ height: 100%;
     padding: 0.5rem 0;
     text-align: right;
   }
+
 }
