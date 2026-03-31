@@ -1,440 +1,639 @@
+If you can use a phone youll be fine using our tools 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>slandsNWA</title>
-
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Load our JavaScript modules: main.js handles all non-video behaviour,
-       video.js contains video playback logic.  Both are deferred to avoid
-       blocking the parser. -->
-  <script src="main.js" defer></script>
-
-  <!-- Load the Lordicon library once with defer to prevent blocking -->
-  <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SLANDS - We keep NWA businesses up to date with websites, AI tools, and automation at student prices.">
+  <title>SLANDS | More Customers for NWA Businesses</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- 3D Canvas Background -->
+  <canvas id="heroCanvas"></canvas>
 
-
-  <nav class="siteNav">
-    <a href="#top" class="brand">SLANDS</a>
-  
-
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      ☰
-    </button>
-  
-
-    <div class="links">
-      <a href="#portfolio">00 Portfolio</a>
-      <a href="#services">01 Services</a>
-      <a href="#aboutUs">02 About Us</a>
-      <a href="#contact">03 Contact</a>
-      <a href="fqa.html">04 FAQ</a>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo"><span class="red">S</span>LANDS</a>
+      <div class="nav-links">
+        <a href="#portfolio" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
+        <a href="#services" data-en="Pricing" data-es="Precios">Pricing</a>
+        <a href="#about" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</a>
+        <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle">ES</button>
+        <a href="#contact" class="nav-cta" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation <span class="arrow">→</span></a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
-  
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <button class="mobile-close" aria-label="Close menu">✕</button>
-  
-    <a href="#portfolio">Portfolio</a>
-    <a href="#services">Services</a>
-    <a href="#aboutUs">About Us</a>
-    <a href="#contact">Contact</a>
-    <a href="fqa.html">FAQ</a>
-  </div>
-  
-  
-
-  
-  
-  
-
-  <!-- Your content goes here -->
-  <section class="titleSection">
-      <div class="background1 shadow">
-        
-<img src="img/slands.png" class="title">
-
- 
-<div class="smallContainer1">
-  <button
-    class="callToAction"
-    onclick="window.location.href='mailto:info@slandsarkansas.com?subject=Free%20Demo%20Request';"
-  >
-    Book a FREE Demo
-  </button>
-
-  <button
-    class="callToAction"
-    onclick="href='sergiolopez.work';"
-  >
-    More About Us
-  </button>
-</div>
-
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <button class="lang-toggle-mobile" id="langToggleMobile" data-en="Español" data-es="English">Español</button>
+    <a href="#portfolio" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
+    <a href="#services" data-en="Pricing" data-es="Precios">Pricing</a>
+    <a href="#about" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</a>
+    <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    <a href="#contact" class="mobile-cta" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</a>
   </div>
 
-
-    
-
-  <div class="spacer11 layer5"></div>
-  <div class="spacer4 layer6"></div>
-  </section>
-
-
-
-
-  <section class="mission" id="mission">
-    <div class="missionText">
-      <h1 class="missionTitle texts">
-        <span>Mission</span>
-      </h1>
-  
-      <p class="missionCopy texts">
-        <span>
-          We help local businesses in Northwest Arkansas scale, automate and
-          simplify their operations with simple, reliable and personalized software
-        </span>
-      </p>
-    </div>
-  </section>
-  
-
-  <div class="spacer layer1"></div>
-
-
-  <section class="portfolioSection">
-      <h1 class="portfolioTitle"  id="portfolio">Websites + Software Examples</h1>
-      
-      <div class="carousel-container">
-          <!-- Carousel Controls -->
-          <button class="carousel-nav prev" aria-label="Previous" data-testid="carousel-prev-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-          </button>
-          <button class="carousel-nav next" aria-label="Next" data-testid="carousel-next-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-          </button>
-
-          <div class="portfolio-carousel" data-testid="portfolio-carousel">
-
-            <!-- Portfolio Card 1 -->
-            <div class="portfolioCard active" data-index="0" data-testid="portfolio-card-0">
-                <div class="video-container" data-testid="video-container-0">
-                    <video class="portfolioVid" src="img/example.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-0"></video>
-                </div>
-          
-                <div class="card-footer">
-                    <h2 class="card-title">Personal Portfolio Website</h2>
-                    <button class="learn-more-btn" data-testid="learn-more-btn-0">Learn More</button>
-                </div>
-          
-                <div class="pTextContainer" data-testid="text-container-0">
-                    <h3 class="pDescription">
-                        We design and build <span class="highlight">interactive websites</span> that show
-                        <span class="highlight">who you are</span> and
-                        <span class="highlight">what makes you special</span>.
-                        Your website becomes a <span class="highlight">strong online presence</span> that helps you
-                        <span class="highlight">stand out</span>.
-                    </h3>
-                    <button class="close-details-btn" data-testid="close-details-btn-0">Close</button>
-                </div>
-            </div>
-          
-            <!-- Portfolio Card 2 -->
-            <div class="portfolioCard" data-index="1" data-testid="portfolio-card-1">
-                <div class="video-container" data-testid="video-container-1">
-                    <video class="portfolioVid" src="img/example2.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-1"></video>
-                </div>
-          
-                <div class="card-footer">
-                    <h2 class="card-title">Restaurant / Food Truck</h2>
-                    <button class="learn-more-btn" data-testid="learn-more-btn-1">Learn More</button>
-                </div>
-          
-                <div class="pTextContainer" data-testid="text-container-1">
-                    <h3 class="pDescription">
-                        We build a <span class="highlight">mobile-friendly website</span> that shows your
-                        <span class="highlight">menu</span> and
-                        <span class="highlight">best sellers</span>.
-                        We add <span class="highlight">real reviews</span> to build
-                        <span class="highlight">trust</span> and help customers
-                        <span class="highlight">choose your business</span>.
-                    </h3>
-                    <button class="close-details-btn" data-testid="close-details-btn-1">Close</button>
-                </div>
-            </div>
-          
-            <!-- Portfolio Card 3 -->
-            <div class="portfolioCard" data-index="2" data-testid="portfolio-card-2">
-                <div class="video-container" data-testid="video-container-2">
-                    <video class="portfolioVid" src="img/example3.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-2"></video>
-                </div>
-          
-                <div class="card-footer">
-                    <h2 class="card-title">Barber Shop</h2>
-                    <button class="learn-more-btn" data-testid="learn-more-btn-2">Learn More</button>
-                </div>
-          
-                <div class="pTextContainer" data-testid="text-container-2">
-                    <h3 class="pDescription">
-                        We design <span class="highlight">custom images</span> and
-                        <span class="highlight">background visuals</span> for your brand.
-                        We build a website that
-                        <span class="highlight">handles appointments</span> and helps your business
-                        <span class="highlight">show up on Google Maps</span>.
-                    </h3>
-                    <button class="close-details-btn" data-testid="close-details-btn-2">Close</button>
-                </div>
-            </div>
-          
-          
-          
-          <!-- Tattoo Shop Card -->
-          <div class="portfolioCard" data-index="3" data-testid="portfolio-card-3">
-              <div class="video-container" data-testid="video-container-3">
-                  <video class="portfolioVid" src="img/example4.mp4" loop muted preload="none" loading="lazy" data-testid="portfolio-video-3"></video>
-              </div>
-          
-              <div class="card-footer">
-                  <h2 class="card-title">Tattoo Shop</h2>
-                  <button class="learn-more-btn" data-testid="learn-more-btn-3">Learn More</button>
-              </div>
-          
-              <div class="pTextContainer" data-testid="text-container-3">
-                  <h3 class="pDescription">
-                      We create <span class="highlight">multiple pages</span> to show your
-                      <span class="highlight">artwork</span> and
-                      <span class="highlight">style</span>.
-                      We add <span class="highlight">online booking</span> using
-                      <span class="highlight">Google Calendar</span> so customers can
-                      <span class="highlight">book appointments easily</span>.
-                  </h3>
-                  <button class="close-details-btn" data-testid="close-details-btn-3">Close</button>
-              </div>
-          </div>
-          
-          </div>
-
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators" data-testid="carousel-indicators">
-              <button class="indicator active" data-index="0" aria-label="Go to slide 1" data-testid="indicator-0"></button>
-              <button class="indicator" data-index="1" aria-label="Go to slide 2" data-testid="indicator-1"></button>
-              <button class="indicator" data-index="2" aria-label="Go to slide 3" data-testid="indicator-2"></button>
-          </div>
-
-          <!-- Progress Bar -->
-          <div class="progress-bar" data-testid="progress-bar">
-              <div class="progress-fill" data-testid="progress-fill"></div>
-          </div>
-      </div>
-  </section>
-
-<div class="spacer3 layer4"></div>
-
-
-<div class="spacer2 layer2"></div>
-
-<section class="aboutUs">
-  <div class="aboutUsText">
-    <h1 class="aTitle texts" id="aboutUs"><span>About Us</span></h1>
-
-    <p class="aCopy texts">
-      <span>
-        We are a group of students from the University of Arkansas teaming up to create
-        software tools to help local businesses scale their production and at the same time
-        help our work opportunities by creating real projects that solve real problems for
-        real people and bring value to the table. The money we make from these is to help
-        ourselves through college.
-      </span>
-    </p>
-  </div>
-</section>
-
-
-  <div class="spacer2 layer3">
-  </div>
-
-
-<!-- Modal -->
-<div class="services-section__modal" id="services-modal">
-  <div class="services-section__modal-overlay"></div>
-  <div class="services-section__modal-content">
-      <button class="services-section__modal-close" id="modal-close">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-      </button>
-      
-      <!-- Modal content will be dynamically inserted here -->
-      <div id="modal-body"></div>
-  </div>
-</div>
-<section class="services">
-
-  <ol class="servicesList">
-    <h1 class="servicesTitle">How Our Personalization Works</h1>
-    <li class="servicesItem">We <span class="highlight ">Learn Your Business</span> – You tell us your <span class="highlight ">industry, audience, and goals</span>.</li>
-    <li class="servicesItem"><span class="highlight ">Adapt the Tools</span> – We adapt/recommend features from our platform to <span class="highlight ">fit your workflow.</span></li>
-    <li class="servicesItem">We <span class="highlight ">Brand It</span> for You – <span class="highlight ">Your logo, your colors, your content.</span></li>
-  </ol>
-
-    <div class="services-section__container">
-    <!-- Header -->
-
-    
-    <div class="services-section__header">
-        <span class="services-section__badge">Services & Solutions</span>
-        <h2 class="services-section__title">SaaS & AI Solutions</h2>
-        <p class="services-section__subtitle">Choose the perfect solution for your business needs</p>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="services-section__grid" id="services">
-        <!-- Tier 1 -->
-        <div class="services-section__card" data-service="1">
-            <div class="services-section__card-overlay"></div>
-            <div class="services-section__card-content">
-                
-              <div class="titleContainer">
-                <div class="servicesSmallContainer">
-                  <h2>Launch</h2>
-                  <h3>Package</h3>
-                  <span class="services-section__tier-badge">Tier 1</span>
-                </div>
-                <div class="services-section__icon">
-                  
-                  <lord-icon
-                      src="https://cdn.lordicon.com/mpfzuwxe.json"
-                      trigger="hover"
-                      colors="primary:#e83a30,secondary:#e76f51"
-                      style="width:100px;height:100px;transform: translate(64px,10px);">
-                  </lord-icon>
-                  </div>
-              </div>
-                
-                <h3 class="services-section__card-title">Fully Responsive Website</h3>
-                <p class="services-section__price">Starting at $700</p>
-                <p class="services-section__tagline">Professional Digital Storefront</p>
-            </div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge animate-on-scroll fade-down">
+          <span data-en="Serving Northwest Arkansas" data-es="Sirviendo al Noroeste de Arkansas">Serving Northwest Arkansas</span>
         </div>
-
-        <!-- Tier 2 -->
-        <div class="services-section__card" data-service="2">
-            <div class="services-section__card-overlay"></div>
-            <div class="services-section__card-content">
-              <div class="titleContainer">
-                  <div class="servicesSmallContainer">
-                    <h2>Advance</h2>
-                    <h3>Package</h3>
-                    <span class="services-section__tier-badge">Tier 2</span>
-                  </div>
-                  <div class="services-section__icon">
-                      
-                      <lord-icon
-                          src="https://cdn.lordicon.com/mjwccpnv.json"
-                          trigger="hover"
-                        colors="primary:#e83a30,secondary:#e76f51"
-                        style="width:110px;height:110px;transform: translateX(45px);">
-                    </lord-icon>
-                    </div>
-                </div>
-                <h3 class="services-section__card-title">Advanced Website + Maintenance</h3>
-                <p class="services-section__price">Monthly care</p>
-                <p class="services-section__tagline">Your website, fully managed</p>
-
-            </div>
+        <h1 class="hero-title">
+          <span class="line animate-on-scroll fade-right" data-delay="100" data-en="Dont understand AI?" data-es="¿No entiendes la IA?">Dont understand AI?</span>
+          <span class="line gradient-text animate-on-scroll fade-right" data-delay="200" data-en="we help your business take advantage of the newest technologies" data-es="ayudamos a tu negocio a aprovechar las tecnologías más nuevas">we help your business take advantage of the newest technologies</span>
+          <span class="line muted animate-on-scroll fade-right" data-delay="300" data-en="WITHOUT YOU HAVING TO LEARN ANY TECH" data-es="SIN QUE TENGAS QUE APRENDER NADA DE TECNOLOGÍA">WITHOUT YOU HAVING TO LEARN ANY TECH</span>
+        </h1>
+        <!-- <p class="hero-description animate-on-scroll fade-up" data-delay="400" data-en="Technology is changing fast — you shouldn't have to keep up alone. We build websites, set up AI tools, and handle all the tech so your business stays current and your customers can find you online, missed calls turn into booked jobs automatically." data-es="La tecnología está cambiando rápido — no deberías tener que mantenerte al día solo. Construimos sitios web, configuramos herramientas de IA y manejamos toda la tecnología para que tu negocio se mantenga actualizado y tus clientes puedan encontrarte en línea.">
+          Technology is changing fast you dont have to keep up alone. We handle all the tech so your business stays current and your customers can find you online, missed calls turn into booked jobs automatically.
+        </p> -->
+        <div class="hero-buttons animate-on-scroll fade-up" data-delay="500">
+          <a href="#contact" class="btn btn-primary" data-en="Get a Free Consultation" data-es="Obtén una Consulta Gratis">Get a Free Consultation <span class="arrow">→</span></a>
+          <a href="#portfolio" class="btn btn-secondary" data-en="See Our Work" data-es="Ver Nuestro Trabajo">See Our Work</a>
         </div>
-
-<!-- Tier 4 -->
-<div class="services-section__card" data-service="4">
-<div class="services-section__card-overlay"></div>
-<div class="services-section__card-content">
-<div class="titleContainer">
-    <div class="servicesSmallContainer">
-      <h2>Scale</h2>
-      <h3>Package</h3>
-      <span class="services-section__tier-badge">Tier 4</span>
-    </div>
-    <div class="services-section__icon">
-      
-      <lord-icon
-          src="https://cdn.lordicon.com/gztcjayb.json"
-          trigger="hover"
-          colors="primary:#e83a30,secondary:#e76f51"
-          style="width:110px;height:110px;transform: translate(89px,4px);">
-      </lord-icon>
+        <!-- <div class="hero-stats animate-on-scroll fade-up" data-delay="600">
+          <div class="stat">
+            <span class="stat-value">$900</span>
+            <span class="stat-label" data-en="Websites From" data-es="Sitios Web Desde">Websites From</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">6-8</span>
+            <span class="stat-label" data-en="Weeks to Launch" data-es="Semanas para Lanzar">Weeks to Launch</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">100%</span>
+            <span class="stat-label" data-en="You Own It" data-es="Es Tuyo">You Own It</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label" data-en="Never Misses a Call" data-es="Nunca Pierde una Llamada">Never Misses a Call</span>
+          </div>
+        </div> -->
       </div>
-  </div>
-  <h3 class="services-section__card-title">AI Assistant / Chatbot</h3>
-  <p class="services-section__price">Custom-built</p>
-  <p class="services-section__tagline">Your Virtual Employee/ AI workflow</p>
-
-</div>
-</div>
-
-
-
-</section>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <!-- Brand and description -->
-    <div class="footer-column">
-      <h2 class="footer-brand">SLANDS</h2>
-      <p class="footer-description">
-        Slands is a student‑led initiative from the University of Arkansas dedicated to building websites and software for local businesses. We help small companies thrive by providing affordable, custom digital tools.
-      </p>
     </div>
-    <!-- Quick links -->
-    <div class="footer-column">
-      <h3 class="footer-heading">Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="index.html#top">Home</a></li>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#aboutUs">About Us</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="fqa.html">FAQ</a></li>
-      </ul>
+    <div class="scroll-indicator animate-on-scroll fade-up" data-delay="800">
+      <div class="mouse"></div>
+      <span data-en="Scroll to explore" data-es="Desplázate para explorar">Scroll to explore</span>
     </div>
-    <!-- Contact details -->
-    <div class="footer-column">
-      <h3 class="footer-heading">Contact Us</h3>
-      <ul class="footer-contact">
-        <li><span class="footer-icon">📍</span> <span>Fayeteville, AR 72703</span></li>
-        <li><span class="footer-icon">📞</span> <span>(479) 278-3112</span></li>
-        <li><span class="footer-icon">✉️</span> <span>srgl1179@gmail.com</span></li>
-      </ul>
-    </div>
-    <!-- Hours of operation -->
-    <div class="footer-column">
-      <h3 class="footer-heading">Hours of Operation</h3>
-      <ul class="footer-hours">
-        <li>Monday – Friday: 7:00 AM – 7:00 PM</li>
-        <li>Saturday – Sunday: 7:00 AM – 7:00 PM</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 SLANDS. All rights reserved.</p>
-    <div class="footer-nav">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
-  </div>
-</footer>
+  </section>
 
+  <!-- Mission Section -->
+  <section id="mission" class="mission">
+    <div class="container">
+      <div class="mission-content">
+        <span class="section-tag animate-on-scroll fade-up" data-en="// RIGHT NOW" data-es="// AHORA MISMO">// RIGHT NOW</span>
+        <h2 class="section-title animate-on-scroll scale-up" data-delay="100">
+          <span data-en="YOU'RE LOSING MONEY" data-es="ESTÁS PERDIENDO DINERO">YOU'RE LOSING MONEY</span><br>
+          <span class="muted" data-en="AND YOU DON'T EVEN KNOW IT" data-es="Y NI SIQUIERA LO SABES">AND YOU DON'T EVEN KNOW IT</span>
+        </h2>
+        <p class="section-description animate-on-scroll fade-up" data-delay="200" data-en="Someone Googled what you sell last night — your competitor showed up, you didn't. A customer called after hours — nobody answered, they went somewhere else. Every day without the right tools is a day you're handing money to your competition." data-es="Alguien buscó en Google lo que vendes anoche — tu competidor apareció, tú no. Un cliente llamó después de horas — nadie contestó, se fueron a otro lugar. Cada día sin las herramientas correctas es un día que le das dinero a tu competencia.">
+          Someone Googled what you sell last night — your competitor showed up, you didn't. A customer called after hours — nobody answered, they went somewhere else. Every day without the right tools is a day you're handing money to your competition.
+        </p>
+      </div>
+    </div>
+    <div class="floating-shapes">
+      <div class="shape shape-1 animate-on-scroll rotate-in"></div>
+      <div class="shape shape-2 animate-on-scroll rotate-in" data-delay="200"></div>
+      <div class="shape shape-3 animate-on-scroll rotate-in" data-delay="400"></div>
+    </div>
+  </section>
 
+  <!-- ROI Section -->
+  <section id="roi" class="process">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag animate-on-scroll fade-up" data-en="// THE MATH" data-es="// LAS MATEMÁTICAS">// THE MATH</span>
+        <h2 class="section-title animate-on-scroll scale-up" data-delay="100">
+          <span data-en="WHAT 5 EXTRA CUSTOMERS" data-es="LO QUE 5 CLIENTES EXTRA">WHAT 5 EXTRA CUSTOMERS</span><br>
+          <span class="muted" data-en="A MONTH LOOKS LIKE" data-es="AL MES SE VE ASÍ">A MONTH LOOKS LIKE</span>
+        </h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step animate-on-scroll slide-left" data-delay="100">
+          <div class="step-number"></div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 data-en="Barber Shop" data-es="Barbería">Barber Shop</h3>
+          <p><span data-en="5 extra clients × $40 =" data-es="5 clientes extra × $40 =">5 extra clients × $40 =</span> <strong class="red">$200/month</strong><br><span data-en="That's $2,400/year from a $900 website." data-es="Eso es $2,400/año de un sitio web de $900.">That's $2,400/year from a $900 website.</span></p>
+        </div>
+        <div class="process-step animate-on-scroll slide-up" data-delay="200">
+          <div class="step-number"></div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 data-en="Florist" data-es="Florería">Florist</h3>
+          <p><span data-en="5 extra orders × $80 =" data-es="5 pedidos extra × $80 =">5 extra orders × $80 =</span> <strong class="red">$400/month</strong><br><span data-en="That's $4,800/year from a $900 website." data-es="Eso es $4,800/año de un sitio web de $900.">That's $4,800/year from a $900 website.</span></p>
+        </div>
+        <div class="process-step animate-on-scroll slide-right" data-delay="300">
+          <div class="step-number"></div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 data-en="Restaurant" data-es="Restaurante">Restaurant</h3>
+          <p><span data-en="5 extra tables × $60 =" data-es="5 mesas extra × $60 =">5 extra tables × $60 =</span> <strong class="red">$300/month</strong><br><span data-en="That's $3,600/year from a $900 website." data-es="Eso es $3,600/año de un sitio web de $900.">That's $3,600/year from a $900 website.</span></p>
+        </div>
+      </div>
+      <div class="section-header center" style="margin-top: 3rem;">
+        <p class="section-description animate-on-scroll fade-up" style="max-width: 700px; margin: 0 auto; font-size: 1.25rem;" data-en="A $900 website that brings you 5 extra customers a month pays for itself fast." data-es="Un sitio web de $900 que te trae 5 clientes extra al mes se paga solo rápidamente.">
+          A $900 website that brings you 5 extra customers a month <strong style="color: white;">pays for itself fast.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
 
-<!-- Closing body tag; scripts are now loaded once in the head -->
+  <!-- Portfolio Section -->
+  <!-- <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag animate-on-scroll fade-right" data-en="// REAL WORK" data-es="// TRABAJO REAL">// REAL WORK</span>
+        <h2 class="section-title animate-on-scroll fade-right" data-delay="100">
+          <span data-en="BUILT FOR BUSINESSES" data-es="CONSTRUIDO PARA NEGOCIOS">BUILT FOR BUSINESSES</span><br>
+          <span class="muted" data-en="LIKE YOURS" data-es="COMO EL TUYO">LIKE YOURS</span>
+        </h2>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item large animate-on-scroll slide-up" data-delay="100">
+          <video class="portfolio-video" data-src="img/example.mp4" muted loop playsinline preload="none"></video>
+          <div class="portfolio-play-hint">▶</div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-tag" data-en="WEBSITE" data-es="SITIO WEB">WEBSITE</span>
+            <h3 data-en="Professional Portfolio" data-es="Portafolio Profesional">Professional Portfolio</h3>
+            <p data-en="Now shows up on Google. New clients find them instead of the other way around." data-es="Ahora aparece en Google. Nuevos clientes los encuentran en lugar de al revés.">Now shows up on Google. New clients find them instead of the other way around.</p>
+            <span class="portfolio-link"><span data-en="View Project" data-es="Ver Proyecto">View Project</span> <span class="arrow">↗</span></span>
+          </div>
+          <div class="portfolio-accent"></div>
+        </div>
+        <div class="portfolio-item animate-on-scroll slide-up" data-delay="200">
+          <video class="portfolio-video" data-src="img/example2.mp4" muted loop playsinline preload="none"></video>
+          <div class="portfolio-play-hint">▶</div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-tag" data-en="WEBSITE + MENU" data-es="SITIO WEB + MENÚ">WEBSITE + MENU</span>
+            <h3 data-en="Food Truck" data-es="Food Truck">Food Truck</h3>
+            <p data-en="Online menu with photos and reviews. Hungry customers find them first." data-es="Menú en línea con fotos y reseñas. Los clientes hambrientos los encuentran primero.">Online menu with photos and reviews. Hungry customers find them first.</p>
+            <span class="portfolio-link"><span data-en="View Project" data-es="Ver Proyecto">View Project</span> <span class="arrow">↗</span></span>
+          </div>
+          <div class="portfolio-accent"></div>
+        </div>
+        <div class="portfolio-item animate-on-scroll slide-up" data-delay="300">
+          <video class="portfolio-video" data-src="img/example3.mp4" muted loop playsinline preload="none"></video>
+          <div class="portfolio-play-hint">▶</div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-tag" data-en="WEBSITE + BOOKING" data-es="SITIO WEB + RESERVAS">WEBSITE + BOOKING</span>
+            <h3 data-en="Barber Shop" data-es="Barbería">Barber Shop</h3>
+            <p data-en="Clients book online instead of calling. No more missed appointments." data-es="Los clientes reservan en línea en lugar de llamar. No más citas perdidas.">Clients book online instead of calling. No more missed appointments.</p>
+            <span class="portfolio-link"><span data-en="View Project" data-es="Ver Proyecto">View Project</span> <span class="arrow">↗</span></span>
+          </div>
+          <div class="portfolio-accent"></div>
+        </div>
+        <div class="portfolio-item large animate-on-scroll slide-up" data-delay="400">
+          <video class="portfolio-video" data-src="img/example4.mp4" muted loop playsinline preload="none"></video>
+          <div class="portfolio-play-hint">▶</div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-tag" data-en="WEBSITE + CALENDAR" data-es="SITIO WEB + CALENDARIO">WEBSITE + CALENDAR</span>
+            <h3 data-en="Tattoo Studio" data-es="Estudio de Tatuajes">Tattoo Studio</h3>
+            <p data-en="Portfolio shows off their work. Google Calendar handles bookings." data-es="El portafolio muestra su trabajo. Google Calendar maneja las reservas.">Portfolio shows off their work. Google Calendar handles bookings.</p>
+            <span class="portfolio-link"><span data-en="View Project" data-es="Ver Proyecto">View Project</span> <span class="arrow">↗</span></span>
+          </div>
+          <div class="portfolio-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Services Section -->
+  <!-- <section id="services" class="services">
+    <div class="section-line"></div>
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag animate-on-scroll fade-up" data-en="// WHAT YOU GET" data-es="// LO QUE OBTIENES">// WHAT YOU GET</span>
+        <h2 class="section-title animate-on-scroll scale-up" data-delay="100">
+          <span data-en="SIMPLE PRICING" data-es="PRECIOS SIMPLES">SIMPLE PRICING</span><br>
+          <span class="muted" data-en="REAL RESULTS" data-es="RESULTADOS REALES">REAL RESULTS</span>
+        </h2>
+        <p class="section-description animate-on-scroll fade-up" data-delay="200" data-en="No hidden fees. No contracts. No tech skills needed. We handle everything." data-es="Sin tarifas ocultas. Sin contratos. Sin habilidades técnicas necesarias. Nosotros manejamos todo.">
+          No hidden fees. No contracts. No tech skills needed. We handle everything.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card animate-on-scroll flip-in" data-delay="100">
+          <div class="service-header">
+            <span class="service-tier" data-en="STARTER" data-es="INICIAL">STARTER</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="service-name" data-en="Launch" data-es="Lanzamiento">Launch</h3>
+          <p class="service-tagline" data-en="Get found on Google" data-es="Aparece en Google">Get found on Google</p>
+          <div class="service-price">
+            <span class="price-label" data-en="Starting at" data-es="Desde">Starting at</span>
+            <span class="price-value">$900</span>
+          </div>
+          <p class="service-title" data-en="Professional Website" data-es="Sitio Web Profesional">Professional Website</p>
+          <ul class="service-features">
+            <li><span class="check">✓</span> <span data-en="Custom design with your brand" data-es="Diseño personalizado con tu marca">Custom design with your brand</span></li>
+            <li><span class="check">✓</span> <span data-en="Works perfectly on phones" data-es="Funciona perfectamente en teléfonos">Works perfectly on phones</span></li>
+            <li><span class="check">✓</span> <span data-en="Google Maps & SEO so people find you" data-es="Google Maps y SEO para que te encuentren">Google Maps & SEO so people find you</span></li>
+            <li><span class="check">✓</span> <span data-en="Contact form that texts you instantly" data-es="Formulario que te envía mensaje al instante">Contact form that texts you instantly</span></li>
+            <li><span class="check">✓</span> <span data-en="Live in 6-8 weeks" data-es="En vivo en 6-8 semanas">Live in 6-8 weeks</span></li>
+          </ul>
+          <a href="#contact" class="service-cta" data-en="Get Started" data-es="Empezar">Get Started</a>
+        </div>
+        <div class="service-card featured animate-on-scroll flip-in" data-delay="200">
+          <div class="featured-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
+          <div class="service-header">
+            <span class="service-tier" data-en="GROWTH" data-es="CRECIMIENTO">GROWTH</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="service-name" data-en="Advance" data-es="Avanzado">Advance</h3>
+          <p class="service-tagline" data-en="We handle everything, you run your business" data-es="Nosotros manejamos todo, tú diriges tu negocio">We handle everything, you run your business</p>
+          <div class="service-price">
+            <span class="price-label" data-en="Starting at" data-es="Desde">Starting at</span>
+            <span class="price-value">$150<span style="font-size: 1rem; font-weight: 400;">/mo</span></span>
+          </div>
+          <p class="service-title" data-en="Website + We Manage It" data-es="Sitio Web + Lo Administramos">Website + We Manage It</p>
+          <ul class="service-features">
+            <li><span class="check">✓</span> <span data-en="Everything in Launch + Scale" data-es="Todo en Lanzamiento + Escala">Everything in Launch + Scale</span></li>
+            <li><span class="check">✓</span> <span data-en="We update your content" data-es="Actualizamos tu contenido">We update your content</span></li>
+            <li><span class="check">✓</span> <span data-en="Call us when you need anything changed" data-es="Llámanos cuando necesites cambios">Call us when you need anything changed</span></li>
+            <li><span class="check">✓</span> <span data-en="You never touch the tech. Ever." data-es="Nunca tocas la tecnología. Nunca.">You never touch the tech. Ever.</span></li>
+          </ul>
+          <a href="#contact" class="service-cta featured" data-en="Get Started" data-es="Empezar">Get Started</a>
+        </div>
+        <div class="service-card animate-on-scroll flip-in" data-delay="300">
+          <div class="service-header">
+            <span class="service-tier" data-en="AI-POWERED" data-es="CON IA">AI-POWERED</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="service-name" data-en="Scale" data-es="Escala">Scale</h3>
+          <p class="service-tagline" data-en="Captures customers you're currently missing" data-es="Captura clientes que actualmente estás perdiendo">Captures customers you're currently missing</p>
+          <div class="service-price">
+            <span class="price-label" data-en="Starting at" data-es="Desde">Starting at</span>
+            <span class="price-value">$1,500</span>
+          </div>
+          <p class="service-title" data-en="AI Assistant — Your 24/7 Employee" data-es="Asistente de IA — Tu Empleado 24/7">AI Assistant — Your 24/7 Employee</p>
+          <ul class="service-features">
+            <li><span class="check">✓</span> <span data-en="Answers questions at 9pm, 2am, anytime" data-es="Responde preguntas a las 9pm, 2am, cuando sea">Answers questions at 9pm, 2am, anytime</span></li>
+            <li><span class="check">✓</span> <span data-en="Books appointments automatically" data-es="Reserva citas automáticamente">Books appointments automatically</span></li>
+            <li><span class="check">✓</span> <span data-en="Knows your menu, prices, hours" data-es="Conoce tu menú, precios, horarios">Knows your menu, prices, hours</span></li>
+            <li><span class="check">✓</span> <span data-en="Captures leads you'd normally lose" data-es="Captura prospectos que normalmente perderías">Captures leads you'd normally lose</span></li>
+            <li><span class="check">✓</span> <span data-en="Pays for itself in the first month" data-es="Se paga solo en el primer mes">Pays for itself in the first month</span></li>
+          </ul>
+          <a href="#contact" class="service-cta" data-en="Get Started" data-es="Empezar">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- How It Works Section -->
+  <section id="how" class="process">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag animate-on-scroll fade-up" data-en="// HOW IT WORKS" data-es="// CÓMO FUNCIONA">// HOW IT WORKS</span>
+        <h2 class="section-title animate-on-scroll scale-up" data-delay="100">
+          <span data-en="THREE STEPS" data-es="TRES PASOS">THREE STEPS</span><br>
+          <span class="muted" data-en="YOU DON'T TOUCH TECH" data-es="NO TOCAS TECNOLOGÍA">YOU DON'T TOUCH TECH</span>
+        </h2>
+      </div>
+      <div class="process-steps four-steps">
+        <div class="process-step animate-on-scroll slide-left" data-delay="100">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+          </div>
+          <h3 data-en="15-Minute Conversation" data-es="Conversación de 15 Minutos">15-Minute Conversation</h3>
+          <p data-en="Tell us about your business. We figure out what's costing you money. No jargon." data-es="Cuéntanos sobre tu negocio. Descubrimos qué te está costando dinero. Sin jerga.">Tell us about your business. We figure out what's costing you money. No jargon.</p>
+        </div>
+        <div class="process-step animate-on-scroll slide-up" data-delay="200">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 data-en="We Build It While You Work" data-es="Lo Construimos Mientras Trabajas">We Build It While You Work</h3>
+          <p data-en="Using the latest AI tools, we deliver in 6-8 weeks at a fraction of agency prices." data-es="Usando las últimas herramientas de IA, entregamos en 6-8 semanas a una fracción de los precios de agencia.">Using the latest AI tools, we deliver in 6-8 weeks at a fraction of agency prices.</p>
+        </div>
+        <div class="process-step animate-on-scroll slide-right" data-delay="300">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3 data-en="You Review, We Refine" data-es="Tú Revisas, Nosotros Refinamos">You Review, We Refine</h3>
+          <p data-en="You tell us what to tweak. We handle every change until it's exactly right." data-es="Nos dices qué ajustar. Manejamos cada cambio hasta que esté exactamente bien.">You tell us what to tweak. We handle every change until it's exactly right.</p>
+        </div>
+        <div class="process-step animate-on-scroll slide-right" data-delay="400">
+          <div class="step-number">04</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 data-en="Customers Start Finding You" data-es="Los Clientes Empiezan a Encontrarte">Customers Start Finding You</h3>
+          <p data-en="Your site goes live on Google. You stop losing customers to competitors." data-es="Tu sitio se publica en Google. Dejas de perder clientes ante los competidores.">Your site goes live on Google. You stop losing customers to competitors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section id="trust" class="mission">
+    <div class="container">
+      <div class="mission-content">
+        <span class="section-tag animate-on-scroll fade-up" data-en="// OUR PROMISE" data-es="// NUESTRA PROMESA">// OUR PROMISE</span>
+        <h2 class="section-title animate-on-scroll scale-up" data-delay="100">
+          <span data-en="ZERO RISK" data-es="CERO RIESGO">ZERO RISK</span><br>
+          <span class="muted" data-en="ZERO TECH HEADACHES" data-es="CERO DOLORES DE CABEZA TÉCNICOS">ZERO TECH HEADACHES</span>
+        </h2>
+        <p class="section-description animate-on-scroll fade-up" data-delay="200" style="max-width: 750px;">
+          <strong style="color: white;" data-en="You own everything." data-es="Eres dueño de todo.">You own everything.</strong> <span data-en="No lock-in. Cancel anytime." data-es="Sin ataduras. Cancela cuando quieras.">No lock-in. Cancel anytime.</span><br><br>
+          <strong style="color: white;" data-en="You don't touch tech." data-es="No tocas tecnología.">You don't touch tech.</strong> <span data-en="If you can use a phone, you can use what we build." data-es="Si puedes usar un teléfono, puedes usar lo que construimos.">If you can use a phone, you can use what we build.</span><br><br>
+          <strong style="color: white;" data-en="Not happy? We fix it." data-es="¿No estás feliz? Lo arreglamos.">Not happy? We fix it.</strong> <span data-en="Revision rounds included — we're not done until you love it." data-es="Rondas de revisión incluidas — no terminamos hasta que lo ames.">Revision rounds included — we're not done until you love it.</span><br><br>
+          <strong style="color: white;" data-en="No surprises." data-es="Sin sorpresas.">No surprises.</strong> <span data-en="You know the price before we start. 50% upfront, 50% when it's live." data-es="Conoces el precio antes de empezar. 50% al inicio, 50% cuando esté en vivo.">You know the price before we start. 50% upfront, 50% when it's live.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-tag animate-on-scroll fade-right" data-en="// WHY WE'RE DIFFERENT" data-es="// POR QUÉ SOMOS DIFERENTES">// WHY WE'RE DIFFERENT</span>
+          <h2 class="section-title animate-on-scroll fade-right" data-delay="100">
+            <span data-en="WE KEEP YOU" data-es="TE MANTENEMOS">WE KEEP YOU</span><br>
+            <span class="muted" data-en="UP TO DATE" data-es="ACTUALIZADO">UP TO DATE</span>
+          </h2>
+          <p class="about-text animate-on-scroll fade-up" data-delay="200">
+            <span data-en="Technology is changing faster than ever. AI, automation, online tools — it's a lot. Most business owners know they need to keep up but don't have the time or knowledge." data-es="La tecnología está cambiando más rápido que nunca. IA, automatización, herramientas en línea — es mucho. La mayoría de los dueños de negocios saben que necesitan mantenerse al día pero no tienen el tiempo o conocimiento.">Technology is changing faster than ever. AI, automation, online tools — it's a lot. Most business owners know they need to keep up but don't have the time or knowledge.</span>
+            <span class="highlight" data-en=" That's our job." data-es=" Ese es nuestro trabajo."> That's our job.</span>
+          </p>
+          <p class="about-text animate-on-scroll fade-up" data-delay="300">
+            <span data-en="We're Computer Science students at the" data-es="Somos estudiantes de Ciencias de la Computación en la">We're Computer Science students at the</span>
+            <span class="highlight" data-en=" University of Arkansas" data-es=" Universidad de Arkansas"> University of Arkansas</span>
+            <span data-en=" — staying on top of new technology is literally what we study. We bring those tools to your business at a fraction of what agencies charge." data-es=" — mantenernos al día con la nueva tecnología es literalmente lo que estudiamos. Traemos esas herramientas a tu negocio a una fracción de lo que cobran las agencias."> — staying on top of new technology is literally what we study. We bring those tools to your business at a fraction of what agencies charge.</span>
+            <span class="highlight" data-en=" Your success is our resume." data-es=" Tu éxito es nuestro currículum."> Your success is our resume.</span>
+          </p>
+          <div class="about-info animate-on-scroll fade-up" data-delay="400">
+            <div class="info-item">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="info-text">
+                <span class="info-label" data-en="Team" data-es="Equipo">Team</span>
+                <span class="info-value" data-en="University of Arkansas CS" data-es="Universidad de Arkansas CS">University of Arkansas CS</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="info-text">
+                <span class="info-label" data-en="Based in" data-es="Ubicados en">Based in</span>
+                <span class="info-value">Fayetteville, AR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image animate-on-scroll zoom-in" data-delay="200">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="SLANDS Team">
+          <div class="image-overlay"></div>
+          <div class="image-badge animate-on-scroll slide-up" data-delay="400">
+            <div class="badge-content">
+              <span class="badge-label" data-en="Our Promise" data-es="Nuestra Promesa">Our Promise</span>
+              <span class="badge-value" data-en="Your Success = Our Resume" data-es="Tu Éxito = Nuestro Currículum">Your Success = Our Resume</span>
+            </div>
+            <div class="badge-icon">✓</div>
+          </div>
+          <div class="image-decoration decoration-1"></div>
+          <div class="image-decoration decoration-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag animate-on-scroll fade-up" data-en="// QUESTIONS" data-es="// PREGUNTAS">// QUESTIONS</span>
+        <h2 class="section-title animate-on-scroll scale-up" data-delay="100">
+          <span data-en="BEFORE YOU" data-es="ANTES DE QUE">BEFORE YOU</span><br>
+          <span class="muted" data-en="DECIDE" data-es="DECIDAS">DECIDE</span>
+        </h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item animate-on-scroll slide-up" data-delay="100">
+          <button class="faq-question">
+            <span data-en="I'm not tech-savvy at all. Will this work for me?" data-es="No soy nada técnico. ¿Esto funcionará para mí?">I'm not tech-savvy at all. Will this work for me?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="That's exactly who we build for. We handle 100% of the tech — you never log into a dashboard or figure out hosting. If you can use your phone, you can use what we build." data-es="Para eso exactamente construimos. Manejamos el 100% de la tecnología — nunca inicias sesión en un panel o te preocupas por el hosting. Si puedes usar tu teléfono, puedes usar lo que construimos.">That's exactly who we build for. We handle 100% of the tech — you never log into a dashboard or figure out hosting. If you can use your phone, you can use what we build.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll slide-up" data-delay="200">
+          <button class="faq-question">
+            <span data-en="How do you deliver agency-quality work at this price?" data-es="¿Cómo entregan trabajo de calidad de agencia a este precio?">How do you deliver agency-quality work at this price?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="I use AI the way a contractor uses power tools, to move faster, not to replace skill. The strategy, the code, and the work? That's still me." data-es="Uso la IA como un contratista usa herramientas eléctricas, para moverme más rápido, no para reemplazar la habilidad. ¿La estrategia, el código y el trabajo? Eso sigo siendo yo.">I use AI the way a contractor uses power tools, to move faster, not to replace skill. The strategy, the code, and the work? That's still me.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll slide-up" data-delay="300">
+          <button class="faq-question">
+            <span data-en="Will a $900 website actually get me more customers?" data-es="¿Un sitio web de $900 realmente me traerá más clientes?">Will a $900 website actually get me more customers?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="If one new customer is worth $50-$100 to you, and your website brings in just 5 extra a month, that's $3,000-$6,000/year. The site pays for itself fast." data-es="Si un nuevo cliente vale $50-$100 para ti, y tu sitio web trae solo 5 extra al mes, eso es $3,000-$6,000/año. El sitio se paga solo rápido.">If one new customer is worth $50-$100 to you, and your website brings in just 5 extra a month, that's $3,000-$6,000/year. The site pays for itself fast.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll slide-up" data-delay="400">
+          <button class="faq-question">
+            <span data-en="What's an AI assistant and do I actually need one?" data-es="¿Qué es un asistente de IA y realmente necesito uno?">What's an AI assistant and do I actually need one?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="Think of it as an employee who works 24/7 and knows everything about your business. When a customer asks 'are you open Sunday?' at 9pm — it answers instantly." data-es="Piénsalo como un empleado que trabaja 24/7 y sabe todo sobre tu negocio. Cuando un cliente pregunta '¿están abiertos el domingo?' a las 9pm — responde instantáneamente.">Think of it as an employee who works 24/7 and knows everything about your business. When a customer asks "are you open Sunday?" at 9pm — it answers instantly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-glow"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag animate-on-scroll fade-right" data-en="// LET'S TALK" data-es="// HABLEMOS">// LET'S TALK</span>
+          <h2 class="section-title animate-on-scroll fade-right" data-delay="100">
+            <span data-en="STOP LOSING" data-es="DEJA DE PERDER">STOP LOSING</span><br>
+            <span class="muted" data-en="CUSTOMERS TODAY" data-es="CLIENTES HOY">CUSTOMERS TODAY</span>
+          </h2>
+          <p class="contact-text animate-on-scroll fade-up" data-delay="200" data-en="15 minutes. We'll look at your business, show you where you're losing customers, and tell you exactly what we'd build to fix it. No pressure, no jargon." data-es="15 minutos. Veremos tu negocio, te mostraremos dónde estás perdiendo clientes, y te diremos exactamente qué construiríamos para arreglarlo. Sin presión, sin jerga.">
+            15 minutes. We'll look at your business, show you where you're losing customers, and tell you exactly what we'd build to fix it. No pressure, no jargon.
+          </p>
+          <div class="contact-details animate-on-scroll fade-up" data-delay="300">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-text-item">
+                <span class="contact-label" data-en="Call or Text" data-es="Llama o Escribe">Call or Text</span>
+                <span class="contact-value">(479) 278-3112</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-text-item">
+                <span class="contact-label" data-en="Email" data-es="Correo">Email</span>
+                <span class="contact-value">contact@slandsnwa.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-text-item">
+                <span class="contact-label" data-en="Location" data-es="Ubicación">Location</span>
+                <span class="contact-value">Fayetteville, AR 72703</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper animate-on-scroll zoom-in" data-delay="200">
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" name="name" required data-placeholder-en="Your Name *" data-placeholder-es="Tu Nombre *" placeholder="Your Name *">
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required data-placeholder-en="Email Address *" data-placeholder-es="Correo Electrónico *" placeholder="Email Address *">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="business" name="business" data-placeholder-en="Business Name" data-placeholder-es="Nombre del Negocio" placeholder="Business Name">
+              </div>
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone" data-placeholder-en="Phone Number" data-placeholder-es="Número de Teléfono" placeholder="Phone Number">
+              </div>
+            </div>
+            <div class="form-group">
+              <select id="service" name="service">
+                <option value="" data-en="What's your biggest challenge?" data-es="¿Cuál es tu mayor desafío?">What's your biggest challenge?</option>
+                <option value="no-website" data-en="I don't have a website yet" data-es="No tengo un sitio web todavía">I don't have a website yet</option>
+                <option value="bad-website" data-en="My website isn't getting me customers" data-es="Mi sitio web no me está trayendo clientes">My website isn't getting me customers</option>
+                <option value="missed-calls" data-en="I'm missing calls and bookings after hours" data-es="Estoy perdiendo llamadas y reservas fuera de horario">I'm missing calls and bookings after hours</option>
+                <option value="online-booking" data-en="I need online booking or ordering" data-es="Necesito reservas o pedidos en línea">I need online booking or ordering</option>
+                <option value="other" data-en="Not sure — I just know I need help" data-es="No estoy seguro — solo sé que necesito ayuda">Not sure — I just know I need help</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" required data-placeholder-en="Tell us about your business — what do you do, and what would 5 extra customers a month mean to you?" data-placeholder-es="Cuéntanos sobre tu negocio — ¿qué haces y qué significarían 5 clientes extra al mes para ti?" placeholder="Tell us about your business — what do you do, and what would 5 extra customers a month mean to you?"></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              <span class="submit-text" data-en="Let's Talk" data-es="Hablemos">Let's Talk</span>
+              <span class="submit-arrow">→</span>
+              <span class="submit-loader"></span>
+            </button>
+          </form>
+          <div id="formSuccess" class="form-success">
+            <div class="success-icon">✓</div>
+            <h3 data-en="Message Sent!" data-es="¡Mensaje Enviado!">Message Sent!</h3>
+            <p data-en="We'll get back to you within 24 hours." data-es="Te responderemos dentro de 24 horas.">We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="red">S</span>LANDS <span class="footer-year">© 2026</span>
+        </div>
+        <div class="footer-links">
+          <a href="#portfolio" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
+          <a href="#services" data-en="Pricing" data-es="Precios">Pricing</a>
+          <a href="#about" data-en="Who We Are" data-es="Quiénes Somos">Who We Are</a>
+          <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+        </div>
+        <div class="footer-tagline" data-en="Technology that works for you" data-es="Tecnología que trabaja para ti">Technology that works for you</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
