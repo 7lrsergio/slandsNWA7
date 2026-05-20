@@ -743,7 +743,7 @@ const VIDEO_DATA = [
   },
   {
     youtubeId: '9LuEH6encVo',
-    thumb: 'img/NB.jpg',
+    thumb: 'img/BN.jpg',
     person: 'Brent Franklin',
     role: 'Entrepreneur, investor & CEO · Former military police · $10M+ per year',
     animClass: 'anim-rise',
